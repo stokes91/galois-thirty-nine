@@ -14,9 +14,9 @@
    limitations under the License.
 */
 
-const GaloisLFSRThirtyNine = require('../main');
+const GaloisThirtyNine = require('galois-thirty-nine');
 
-const lfsr = GaloisLFSRThirtyNine.from('321FACE0FF');
+const lfsr = GaloisThirtyNine.from('321FACE0FF');
 
 for (let l = 10; l--;) {
   lfsr.iterate();

@@ -3,9 +3,9 @@ This linear feedback shift-register with 39 bits counts to 549755813887, and can
 
 ## Example
 ```
-const GaloisLFSRThirtyNine = require('../main');
+const GaloisThirtyNine = require('galois-thirty-nine');
 
-const lfsr = GaloisLFSRThirtyNine.from('321FACE0FF');
+const lfsr = GaloisThirtyNine.from('321FACE0FF');
 
 for (let l = 10; l--;) {
   lfsr.iterate();

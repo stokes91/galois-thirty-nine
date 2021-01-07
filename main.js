@@ -16,7 +16,7 @@
 
 const AlphaNumeric = 'WXYZBCDEFGHJKLMNO123456789PQRTUV';
 
-class GaloisLFSRThirtyNine {
+class GaloisThirtyNine {
   constructor() {
     this.lowBits = 0;
     this.highBits = 1;
@@ -58,12 +58,12 @@ class GaloisLFSRThirtyNine {
   }
 }
 
-GaloisLFSRThirtyNine.from = (input) => {
+GaloisThirtyNine.from = (input) => {
   if (!/[\da-f]{10}/gi.test(input)) {
     return false;
   }
 
-  const lfsr = new GaloisLFSRThirtyNine();
+  const lfsr = new GaloisThirtyNine();
 
   const buf = Buffer.from(input, 'hex');
   lfsr.highBits = buf.readUInt8(0);
@@ -71,4 +71,4 @@ GaloisLFSRThirtyNine.from = (input) => {
   return lfsr;
 };
 
-module.exports = GaloisLFSRThirtyNine;
+module.exports = GaloisThirtyNine;
