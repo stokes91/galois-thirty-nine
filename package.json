@@ -1,6 +1,6 @@
 {
   "name": "galois-thirty-nine",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "This linear feedback shift-register with 39 bits counts to 549755813887",
   "main": "main.js",
   "scripts": {
