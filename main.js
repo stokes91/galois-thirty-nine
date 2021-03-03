@@ -14,7 +14,7 @@
    limitations under the License.
 */
 
-const AlphaNumeric = 'WXYZBCDEFGHJKLMNO123456789PQRTUV';
+const AlphaNumeric = "WXYZBCDEFGHJKLMNO123456789PQRTUV";
 
 class GaloisThirtyNine {
   constructor() {
@@ -41,20 +41,22 @@ class GaloisThirtyNine {
       this.lowBits >>> 15,
       this.lowBits >>> 20,
       this.lowBits >>> 25,
-      (this.highBits << 2) | (this.lowBits >>> 30)
+      (this.highBits << 2) | (this.lowBits >>> 30),
     ];
 
-    return r.map((b) => {
-      b &= 0x1F;
-      return AlphaNumeric[b];
-    }).join('');
+    return r
+      .map((b) => {
+        b &= 0x1f;
+        return AlphaNumeric[b];
+      })
+      .join("");
   }
 
   toDBString() {
     const buf = Buffer.allocUnsafe(5);
     buf.writeUInt8(this.highBits, 0);
     buf.writeUInt32BE(this.lowBits, 1);
-    return buf.toString('hex');
+    return buf.toString("hex");
   }
 }
 
@@ -65,7 +67,7 @@ GaloisThirtyNine.from = (input) => {
 
   const lfsr = new GaloisThirtyNine();
 
-  const buf = Buffer.from(input, 'hex');
+  const buf = Buffer.from(input, "hex");
   lfsr.highBits = buf.readUInt8(0);
   lfsr.lowBits = buf.readUInt32BE(1);
   return lfsr;

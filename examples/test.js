@@ -14,11 +14,11 @@
    limitations under the License.
 */
 
-const GaloisThirtyNine = require('galois-thirty-nine');
+const GaloisThirtyNine = require("galois-thirty-nine");
 
-const lfsr = GaloisThirtyNine.from('321FACE0FF');
+const lfsr = GaloisThirtyNine.from("321FACE0FF");
 
-for (let l = 10; l--;) {
+for (let l = 10; l--; ) {
   lfsr.iterate();
   console.log(lfsr.toString());
 }
