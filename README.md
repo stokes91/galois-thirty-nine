@@ -14,10 +14,6 @@ The first character represents 4 bits, the following seven represent 35.
 Every single possible id is reached, except for the all-zero internal value,
 WWWWWWWW, which is a lockup condition to the shift register.
 
-## Logic
-Log2(2^39) = Log2((2^4) * (2^5)^7)
-39 = 4 + 5 * 7
-
 ## Regular Expression
 ```
 /^[WXYZBCDEFGHJKLMN][WXYZBCDEFGHJKLMNO123456789PQRTUV]{7}$/
